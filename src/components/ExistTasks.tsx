@@ -42,8 +42,8 @@ const ExistTasks: React.FC<ExistTasksProps> = ({ list, className, setTaskToEdit,
       <tbody>
         {
           list.tasks.map((task: Task) => (
-            <tr key={task.id} className={task.completed ? 'completed' : ''}>
-              <td>{task.name}</td>
+            <tr key={task.id}>
+              <td><p><span className={`tag is-rounded ${task.completed ? 'is-success' : 'is-warning'}`}>{task.completed ? '已完成' : '未完成' }</span> {task.name}</p></td>
               <td className="has-text-centered">
                 <button className="button is-info is-small"
                   onClick={() => handleTaskEdit(task, list)}
