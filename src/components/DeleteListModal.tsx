@@ -50,7 +50,9 @@ const DeleteListModal: React.FC<DeleteListModalProps> = (props) => {
                     <ul>
                       {list?.tasks.map((task: Task) => (
                         <li key={task.id}>
-                          <p>{task.name}&nbsp;{task.completed ? '已完成' : '未完成'}</p>
+                          <p>{task.name}&nbsp;
+                          <span className={`tag is-rounded ${task.completed ? 'is-success' : 'is-warning'}`}>{task.completed ? '已完成' : '未完成' }</span>
+                          </p>
                         </li>
                       ))}
                     </ul>
